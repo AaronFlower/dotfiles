@@ -1,5 +1,15 @@
+# use Antigen to manager oh-my-zsh plugins
+source $HOME/dotfiles/antigen.zsh
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Tell Antigen that you're done.
+antigen apply
+
 # oh-my-zsh path
 export ZSH=$HOME/dotfiles/.oh-my-zsh
+export TERM=xterm
 
 # Set name of the theme to load.
 ZSH_THEME="lambda-mod-zsh-theme/lambda-mod"
@@ -66,8 +76,42 @@ fi
 
 source ~/dotfiles/my-alias.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# alias
+alias diff=colordiff
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+function proxy() {
+	export http_proxy=http://dev-proxy.oa.com:8080
+	export https_proxy=http://dev-proxy.oa.com:8080
+	export HTTP_PROXY=http://dev-proxy.oa.com:8080
+	export HTTPS_PROXY=http://dev-proxy.oa.com:8080
+	export no_proxy="localhost,127.0.0.1,.oa.com"
+	echo "Proxy on http://dev-proxy.oa.com:8080"
+}
+
+function noproxy() {
+	export http_proxy=
+	export https_proxy=
+	export HTTP_PROXY=
+	export HTTPS_PROXY=
+	echo "Proxy off"
+}
+
+# git proxy
+gproxy () {
+	git config --global http.proxy http://dev-proxy.oa.com:8080
+	echo "Git HTTP Proxy on: http://dev-proxy.oa.com:8080"
+}
+
+# git noproxy
+gnoproxy () {
+	git config --global --unset http.proxy
+	echo "Git HTTP Proxy off"
+}
+
+[ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
