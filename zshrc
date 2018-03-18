@@ -64,3 +64,5 @@ else
   export EDITOR='mvim'
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
