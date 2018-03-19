@@ -114,4 +114,4 @@ gnoproxy () {
 	echo "Git HTTP Proxy off"
 }
 
-[ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
