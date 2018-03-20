@@ -10,6 +10,7 @@ antigen apply
 # oh-my-zsh path
 export ZSH=$HOME/dotfiles/.oh-my-zsh
 export TERM=xterm
+export TERM=xterm-256color
 
 # Set name of the theme to load.
 ZSH_THEME="lambda-mod-zsh-theme/lambda-mod"
@@ -81,7 +82,7 @@ alias diff=colordiff
 
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
