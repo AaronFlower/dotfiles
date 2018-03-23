@@ -2,15 +2,14 @@
 source $HOME/dotfiles/antigen.zsh
 
 # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that you're done.
 antigen apply
 
 # oh-my-zsh path
 export ZSH=$HOME/dotfiles/.oh-my-zsh
-export TERM=xterm
-export TERM=xterm-256color
+export TERM='xterm-256color'
 
 # Set name of the theme to load.
 ZSH_THEME="lambda-mod-zsh-theme/lambda-mod"
@@ -80,12 +79,6 @@ source ~/dotfiles/my-alias.zsh
 # alias
 alias diff=colordiff
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
 function proxy() {
 	export http_proxy=http://dev-proxy.oa.com:8080
 	export https_proxy=http://dev-proxy.oa.com:8080
@@ -116,3 +109,9 @@ gnoproxy () {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+echo ".zshrc sourced"
