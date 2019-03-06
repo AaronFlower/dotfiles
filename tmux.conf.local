@@ -257,8 +257,8 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
+set -gu prefix2
+unbind C-a
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
@@ -292,8 +292,7 @@ bind -r K resize-pane -U 10
 bind -r L resize-pane -R 10
 
 # clear-history, -n means dont need to prefix
-# may be affect vim 
+# may be affect vim
 # bind -n C-k clear-history
 # enable mouse support for switching panes/windows
 setw -g mouse on
-
