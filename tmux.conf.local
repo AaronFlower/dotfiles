@@ -280,10 +280,10 @@ bind v split-window -h -c "#{pane_current_path}"
 bind y setw synchronize-panes
 
 # pane movements shortcuts
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+bind  h select-pane -L
+bind  j select-pane -D
+bind  k select-pane -U
+bind  l select-pane -R
 
 # Resize pane shortcuts
 bind -r H resize-pane -L 10
@@ -298,3 +298,4 @@ bind -r L resize-pane -R 10
 setw -g mouse on
 
 set -g default-terminal "xterm-256color"
+set -g repeat-time 200
