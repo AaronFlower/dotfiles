@@ -299,3 +299,7 @@ setw -g mouse on
 
 set -g default-terminal "xterm-256color"
 set -g repeat-time 200
+
+# repeat last shell command on right pane (if it happens to be a shell)
+# bind-key g select-pane -R \; send-keys C-c Up C-m \; last-pane
+bind-key g select-pane -R \; send-keys Up C-m \; last-pane
